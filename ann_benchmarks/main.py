@@ -488,33 +488,34 @@ def get_queries(args):
 def get_algos(m, save_index):
     algos = {
         'lshf': [LSHF(m, 5, 10), LSHF(m, 5, 20), LSHF(m, 10, 20), LSHF(m, 10, 50), LSHF(m, 20, 100)],
-        'flann': [FLANN(m, 0.2), FLANN(m, 0.5), FLANN(m, 0.7), FLANN(m, 0.8), FLANN(m, 0.9), FLANN(m, 0.95), FLANN(m, 0.97), FLANN(m, 0.98), FLANN(m, 0.99), FLANN(m, 0.995)],
-        'panns': [PANNS(m, 5, 20), PANNS(m, 10, 10), PANNS(m, 10, 50), PANNS(m, 10, 100), PANNS(m, 20, 100), PANNS(m, 40, 100)],
+        # 'flann': [FLANN(m, 0.2), FLANN(m, 0.5), FLANN(m, 0.7), FLANN(m, 0.8), FLANN(m, 0.9), FLANN(m, 0.95), FLANN(m, 0.97), FLANN(m, 0.98), FLANN(m, 0.99), FLANN(m, 0.995)],
+        # 'panns': [PANNS(m, 5, 20), PANNS(m, 10, 10), PANNS(m, 10, 50), PANNS(m, 10, 100), PANNS(m, 20, 100), PANNS(m, 40, 100)],
         'annoy': [Annoy(m, n_trees, search_k) for n_trees in [100, 200, 400] for search_k in [100, 200, 400, 1000, 2000, 4000, 10000, 20000, 40000, 100000, 200000, 400000]],
-        'nearpy': [NearPy(m, 10, 5), NearPy(m, 10, 10), NearPy(m, 10, 20), NearPy(m, 10, 40), # NearPy(m, 10, 100),
-                   NearPy(m, 12, 5), NearPy(m, 12, 10), NearPy(m, 12, 20), NearPy(m, 12, 40), # NearPy(m, 12, 100),
-                   NearPy(m, 14, 5), NearPy(m, 14, 10), NearPy(m, 14, 20), NearPy(m, 14, 40), # NearPy(m, 14, 100),
-                   NearPy(m, 16, 5), NearPy(m, 16, 10), NearPy(m, 16, 15), NearPy(m, 16, 20), NearPy(m, 16, 25), NearPy(m, 16, 30), NearPy(m, 16, 40)], #, NearPy(m, 16, 50), NearPy(m, 16, 70), NearPy(m, 16, 90), NearPy(m, 16, 120), NearPy(m, 16, 150)],
+        # 'nearpy': [NearPy(m, 10, 5), NearPy(m, 10, 10), NearPy(m, 10, 20), NearPy(m, 10, 40), # NearPy(m, 10, 100),
+        #            NearPy(m, 12, 5), NearPy(m, 12, 10), NearPy(m, 12, 20), NearPy(m, 12, 40), # NearPy(m, 12, 100),
+        #            NearPy(m, 14, 5), NearPy(m, 14, 10), NearPy(m, 14, 20), NearPy(m, 14, 40), # NearPy(m, 14, 100),
+        #            NearPy(m, 16, 5), NearPy(m, 16, 10), NearPy(m, 16, 15), NearPy(m, 16, 20), NearPy(m, 16, 25), NearPy(m, 16, 30), NearPy(m, 16, 40)], #, NearPy(m, 16, 50), NearPy(m, 16, 70), NearPy(m, 16, 90), NearPy(m, 16, 120), NearPy(m, 16, 150)],
         'bruteforce': [BruteForce(m)],
         'bruteforce-blas': [BruteForceBLAS(m)],
         'ball': [BallTree(m, 10), BallTree(m, 20), BallTree(m, 40), BallTree(m, 100), BallTree(m, 200), BallTree(m, 400), BallTree(m, 1000)],
         'kd': [KDTree(m, 10), KDTree(m, 20), KDTree(m, 40), KDTree(m, 100), KDTree(m, 200), KDTree(m, 400), KDTree(m, 1000)],
 
         # START: Non-Metric Space Library (nmslib) entries
-        'bruteforce0(nmslib)': [NmslibNewIndex(m, 'seq_search', ['copyMem=0'])],
+        # 'bruteforce0(nmslib)': [NmslibNewIndex(m, 'seq_search', ['copyMem=0'])],
         # We don't need copyMem=1 now, because the new Python wrapper already re-creates data points.
         #'bruteforce1(nmslib)': [NmslibNewIndex(m, 'seq_search', ['copyMem=1'])],
 
-        'BallTree(nmslib)': [],
+        # 'BallTree(nmslib)': [],
 
-        'hnsw(nmslib)': [],
+        # 'hnsw(nmslib)': [],
 
-        'SW-graph(nmslib)' :[],
+        # 'SW-graph(nmslib)' :[],
 
     }
 
-    for r in [0.99, 0.97, 0.95, 0.9, 0.85, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]:
-      algos['BallTree(nmslib)'].append(NmslibNewIndex(m, 'vptree', ['tuneK=10', 'desiredRecall=%f' % r]))
+    # algos = {'annoy': [Annoy(m, n_trees, search_k) for n_trees in [100]]}
+    # for r in [0.99, 0.97, 0.95, 0.9, 0.85, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]:
+    #   algos['BallTree(nmslib)'].append(NmslibNewIndex(m, 'vptree', ['tuneK=10', 'desiredRecall=%f' % r]))
 
     if m == 'euclidean':
         # kgraph 
@@ -550,46 +551,46 @@ def get_algos(m, save_index):
 
     # END: Non-Metric Space Library (nmslib) entries
 
-    if m == 'angular':
-        # kgraph 
-        kgraph_preset ={'reverse':-1, 'K':200, 'L':300, 'S':20};
-        kgraph_Ps = [1,2,3,4,5,10,20,30,40,50,60,70,80,90,100]
-        algos['kgraph'] = [KGraph(m, P, kgraph_preset, save_index) for P in kgraph_Ps]
+    # if m == 'angular':
+    #     # kgraph 
+    #     kgraph_preset ={'reverse':-1, 'K':200, 'L':300, 'S':20};
+    #     kgraph_Ps = [1,2,3,4,5,10,20,30,40,50,60,70,80,90,100]
+    #     algos['kgraph'] = [KGraph(m, P, kgraph_preset, save_index) for P in kgraph_Ps]
 
-        # nmslib algorithms
-        MsPostsEfs=[
-                (48, 2, [50,  70,  90,  120,  160,  200, 400, 600, 700, 800, 1000, 1400, 1600, 2000]),
-                (32, 2, [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 200, 300, 400, 600, 700, 800, 1000, 1200, 1400,1600, 2000]),
-                (20, 0, [2, 5, 10, 15, 20, 30, 40, 50, 70, 80]),
-                (12, 0, [1, 2, 5, 10, 15, 20, 30, 40, 50, 70, 80])]
+    #     # nmslib algorithms
+    #     MsPostsEfs=[
+    #             (48, 2, [50,  70,  90,  120,  160,  200, 400, 600, 700, 800, 1000, 1400, 1600, 2000]),
+    #             (32, 2, [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 200, 300, 400, 600, 700, 800, 1000, 1200, 1400,1600, 2000]),
+    #             (20, 0, [2, 5, 10, 15, 20, 30, 40, 50, 70, 80]),
+    #             (12, 0, [1, 2, 5, 10, 15, 20, 30, 40, 50, 70, 80])]
 
-        for oneCase in MsPostsEfs:
-            for ef in oneCase[2]:
-                algos['hnsw(nmslib)'].append(NmslibReuseIndex(m, 'hnsw', ['M=%d' % oneCase[0], 'post=%d' % oneCase[1], 'efConstruction=800'], 
-                                                                         save_index,
-                                                                         ['ef=%d' %ef]))
+    #     for oneCase in MsPostsEfs:
+    #         for ef in oneCase[2]:
+    #             algos['hnsw(nmslib)'].append(NmslibReuseIndex(m, 'hnsw', ['M=%d' % oneCase[0], 'post=%d' % oneCase[1], 'efConstruction=800'], 
+    #                                                                      save_index,
+    #                                                                      ['ef=%d' %ef]))
 
-        NNsAndEfs = [ (30, [700, 650, 550, 450, 350, 275, 200, 150, 120, 80, 50, 30]),
-                      (15, [80, 50, 30, 20]),
-                      (3,  [120, 80, 60, 40, 20, 10, 8, 4, 2]) ]
+    #     NNsAndEfs = [ (30, [700, 650, 550, 450, 350, 275, 200, 150, 120, 80, 50, 30]),
+    #                   (15, [80, 50, 30, 20]),
+    #                   (3,  [120, 80, 60, 40, 20, 10, 8, 4, 2]) ]
 
-        for oneCase in NNsAndEfs:
-          for ef in oneCase[1]:
-            algos['SW-graph(nmslib)'].append(NmslibReuseIndex(m, 'sw-graph', 
-                                            ['NN=%d' % oneCase[0], 'efConstruction=800', 'initIndexAttempts=1'], save_index,
-                                            ['efSearch=%d' % ef,   'initSearchAttempts=1']))
+    #     for oneCase in NNsAndEfs:
+    #       for ef in oneCase[1]:
+    #         algos['SW-graph(nmslib)'].append(NmslibReuseIndex(m, 'sw-graph', 
+    #                                         ['NN=%d' % oneCase[0], 'efConstruction=800', 'initIndexAttempts=1'], save_index,
+    #                                         ['efSearch=%d' % ef,   'initSearchAttempts=1']))
 
-        # END: Non-Metric Space Library (nmslib) entries
-        # RPForest only works for cosine
-        algos['rpforest'] = [RPForest(leaf_size, n_trees) for n_trees in [3, 5, 10, 20, 40, 100, 200, 400] for leaf_size in [3, 5, 10, 20, 40, 100, 200, 400]]
-        L = []
-        x = 1
-        while True:
-            L.append(x)
-            if x >= 1400:
-                break
-            x = int(math.ceil(x * 1.1))
-        algos['falconn'] = [FALCONN(m, 16, l, l) for l in L]
+    #     # END: Non-Metric Space Library (nmslib) entries
+    #     # RPForest only works for cosine
+    #     algos['rpforest'] = [RPForest(leaf_size, n_trees) for n_trees in [3, 5, 10, 20, 40, 100, 200, 400] for leaf_size in [3, 5, 10, 20, 40, 100, 200, 400]]
+    #     L = []
+    #     x = 1
+    #     while True:
+    #         L.append(x)
+    #         if x >= 1400:
+    #             break
+    #         x = int(math.ceil(x * 1.1))
+    #     algos['falconn'] = [FALCONN(m, 16, l, l) for l in L]
 
     return algos
 
