@@ -392,7 +392,7 @@ class BruteForceBLAS(BaseANN):
         return sorted(indices, key=lambda index: dists[index])  # sort `n` closest into correct order
 
 
-def get_dataset(which='glove', limit=-1, random_state = 3, test_size = 10000):
+def get_dataset(which='glove', limit=-1, random_state = 3, test_size = 1000):
     cache = 'queries/%s-%d-%d-%d.npz' % (which, test_size, limit, random_state)
     if os.path.exists(cache):
         v = numpy.load(cache)
