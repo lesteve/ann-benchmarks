@@ -507,7 +507,7 @@ def get_algos(m, save_index):
 
         # 'BallTree(nmslib)': [],
 
-        # 'hnsw(nmslib)': [],
+        'hnsw(nmslib)': [],
 
         # 'SW-graph(nmslib)' :[],
 
@@ -551,24 +551,24 @@ def get_algos(m, save_index):
 
     # END: Non-Metric Space Library (nmslib) entries
 
-    # if m == 'angular':
+    if m == 'angular':
     #     # kgraph 
     #     kgraph_preset ={'reverse':-1, 'K':200, 'L':300, 'S':20};
     #     kgraph_Ps = [1,2,3,4,5,10,20,30,40,50,60,70,80,90,100]
     #     algos['kgraph'] = [KGraph(m, P, kgraph_preset, save_index) for P in kgraph_Ps]
 
-    #     # nmslib algorithms
-    #     MsPostsEfs=[
-    #             (48, 2, [50,  70,  90,  120,  160,  200, 400, 600, 700, 800, 1000, 1400, 1600, 2000]),
-    #             (32, 2, [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 200, 300, 400, 600, 700, 800, 1000, 1200, 1400,1600, 2000]),
-    #             (20, 0, [2, 5, 10, 15, 20, 30, 40, 50, 70, 80]),
-    #             (12, 0, [1, 2, 5, 10, 15, 20, 30, 40, 50, 70, 80])]
+        # nmslib algorithms
+        MsPostsEfs=[
+                (48, 2, [50,  70,  90,  120,  160,  200, 400, 600, 700, 800, 1000, 1400, 1600, 2000]),
+                (32, 2, [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160, 200, 300, 400, 600, 700, 800, 1000, 1200, 1400,1600, 2000]),
+                (20, 0, [2, 5, 10, 15, 20, 30, 40, 50, 70, 80]),
+                (12, 0, [1, 2, 5, 10, 15, 20, 30, 40, 50, 70, 80])]
 
-    #     for oneCase in MsPostsEfs:
-    #         for ef in oneCase[2]:
-    #             algos['hnsw(nmslib)'].append(NmslibReuseIndex(m, 'hnsw', ['M=%d' % oneCase[0], 'post=%d' % oneCase[1], 'efConstruction=800'], 
-    #                                                                      save_index,
-    #                                                                      ['ef=%d' %ef]))
+        for oneCase in MsPostsEfs:
+            for ef in oneCase[2]:
+                algos['hnsw(nmslib)'].append(NmslibReuseIndex(m, 'hnsw', ['M=%d' % oneCase[0], 'post=%d' % oneCase[1], 'efConstruction=800'], 
+                                                                         save_index,
+                                                                         ['ef=%d' %ef]))
 
     #     NNsAndEfs = [ (30, [700, 650, 550, 450, 350, 275, 200, 150, 120, 80, 50, 30]),
     #                   (15, [80, 50, 30, 20]),
