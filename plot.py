@@ -11,10 +11,13 @@ parser.add_argument('--output', action='append')
 args = parser.parse_args()
 
 # Construct palette by reading all inputs
-all_algos = set()
-for fn in args.input:
-    for line in open(fn):
-        all_algos.add(line.strip().split('\t')[0])
+# all_algos = set()
+# for fn in args.input:
+#     for line in open(fn):
+#         all_algos.add(line.strip().split('\t')[0])
+
+all_algos = ['annoy', 'ball', 'bruteforce', 'bruteforce-blas',
+             'hnsw(nmslib)', 'kd', 'lshf']
 
 colors = plt.cm.Set1(numpy.linspace(0, 1, len(all_algos)))
 linestyles = {}
