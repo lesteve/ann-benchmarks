@@ -1,0 +1,116 @@
+annoy	Annoy(n_trees=100, search_k=4000)	2.04811310768	0.000196788072586	0.9829
+kd	KDTree(leaf_size=1000)	0.0822761058807	0.00278091311455	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=90'])	3.9751598835	4.87108230591e-05	0.9999
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=1200'])	4.05348801613	0.000629607915878	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=40'])	1.846118927	4.68130111694e-05	0.9919
+lshf	LSHF(n_est=5, n_cand=10)	0.10400390625	0.0110143568516	0.1147
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=80'])	0.149050951004	9.67237949371e-05	0.9986
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=2000'])	0.195146083832	0.00141648411751	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=400'])	0.137610912323	0.000160236120224	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=2'])	0.133386850357	6.08758926392e-05	0.5574
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=2000'])	0.170835018158	0.00118341994286	1.0
+ball	BallTree(leaf_size=20)	0.134769916534	0.0028067650795	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=40'])	0.137782096863	0.000109619140625	0.9997
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=90'])	0.138275146484	0.0001122610569	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=140'])	0.15070605278	0.000130800962448	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=70'])	2.51583695412	7.01739788055e-05	0.9992
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=160'])	0.0737521648407	8.69481563568e-05	1.0
+annoy	Annoy(n_trees=100, search_k=200)	1.95408010483	8.39560031891e-05	0.777
+annoy	Annoy(n_trees=400, search_k=100)	5.33585619926	0.00014522600174	0.7332
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=20'])	0.126953840256	7.08518028259e-05	0.9783
+annoy	Annoy(n_trees=400, search_k=2000)	5.74884104729	0.000187753915787	0.9617
+lshf	LSHF(n_est=10, n_cand=50)	0.240201950073	0.00800829410553	0.4248
+ball	BallTree(leaf_size=400)	0.0515332221985	0.00083455491066	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=40'])	0.117100000381	7.47151374817e-05	0.9945
+annoy	Annoy(n_trees=200, search_k=4000)	3.89071893692	0.000171730995178	0.9805
+lshf	LSHF(n_est=5, n_cand=20)	0.113615989685	0.0138082108498	0.1643
+bruteforce-blas	BruteForceBLAS()	0.0140991210938	0.000354068994522	1.0
+annoy	Annoy(n_trees=200, search_k=10000)	2.83033204079	0.000244385957718	0.9931
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=800'])	0.104285955429	0.000233446121216	1.0
+annoy	Annoy(n_trees=200, search_k=200)	3.46077299118	0.000140245914459	0.7954
+kd	KDTree(leaf_size=20)	0.0827050209045	0.000985624074936	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=2'])	0.0783569812775	3.20429801941e-05	0.6331
+annoy	Annoy(n_trees=100, search_k=100000)	2.10490202904	0.00111920213699	1.0
+annoy	Annoy(n_trees=100, search_k=200000)	1.98569011688	0.00191255617142	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=50'])	0.0627460479736	6.30631446838e-05	0.9998
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=1600'])	0.133823156357	0.00124945807457	1.0
+annoy	Annoy(n_trees=400, search_k=200)	7.68744301796	0.000175523042679	0.8083
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=5'])	0.131286859512	7.06150531769e-05	0.8194
+annoy	Annoy(n_trees=200, search_k=20000)	3.48146605492	0.000398422002792	0.9966
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=10'])	0.0810308456421	6.92708492279e-05	0.9013
+annoy	Annoy(n_trees=200, search_k=40000)	3.31609082222	0.000595837831497	0.9985
+kd	KDTree(leaf_size=400)	0.0719017982483	0.00103174304962	1.0
+ball	BallTree(leaf_size=1000)	0.0610828399658	0.000976407051086	1.0
+annoy	Annoy(n_trees=400, search_k=200000)	7.29993796349	0.00215042114258	0.9998
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=1000'])	0.153416872025	0.000732622146606	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=600'])	0.13205909729	0.000181475162506	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=30'])	0.102792024612	7.50720500946e-05	0.9913
+ball	BallTree(leaf_size=200)	0.111718177795	0.000935174942017	1.0
+annoy	Annoy(n_trees=200, search_k=400)	3.00153303146	0.000103449106216	0.8646
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=800'])	0.130028009415	0.000211901903152	1.0
+lshf	LSHF(n_est=20, n_cand=100)	0.315959215164	0.0157765328884	0.787
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=50'])	0.0533449649811	3.88979911804e-05	0.9975
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=120'])	0.0681250095367	7.71851539612e-05	0.999
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=70'])	0.133795022964	9.39438343048e-05	0.9982
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=30'])	0.133557081223	8.25448036194e-05	0.9854
+annoy	Annoy(n_trees=100, search_k=2000)	1.99848604202	0.000131911993027	0.9615
+annoy	Annoy(n_trees=400, search_k=4000)	5.8488740921	0.000264127969742	0.9799
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=5'])	0.134020090103	5.61540126801e-05	0.7766
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=80'])	0.133492946625	9.59148406982e-05	0.9995
+annoy	Annoy(n_trees=400, search_k=40000)	5.89540195465	0.00058694601059	0.9983
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=200'])	0.0796010494232	8.77010822296e-05	1.0
+annoy	Annoy(n_trees=400, search_k=1000)	5.90921092033	0.000176718950272	0.935
+annoy	Annoy(n_trees=100, search_k=100)	2.00413489342	0.000118572950363	0.6989
+annoy	Annoy(n_trees=200, search_k=100)	3.48514795303	0.000110907077789	0.7206
+kd	KDTree(leaf_size=40)	0.122282981873	0.0010789937973	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=600'])	0.0723509788513	0.000173590898514	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=30'])	0.130213022232	8.67240428925e-05	0.999
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=1400'])	0.134876966476	0.00128229498863	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=60'])	0.135219097137	9.95030403137e-05	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=80'])	0.142421007156	0.000102897882462	1.0
+ball	BallTree(leaf_size=100)	0.124860048294	0.00107440805435	1.0
+annoy	Annoy(n_trees=200, search_k=200000)	3.36154389381	0.00193667197227	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=100'])	0.0687780380249	7.3664188385e-05	1.0
+kd	KDTree(leaf_size=100)	0.10444188118	0.00108176898956	1.0
+ball	BallTree(leaf_size=40)	0.126121044159	0.000792388916016	1.0
+lshf	LSHF(n_est=10, n_cand=20)	0.115075111389	0.0213594851494	0.281
+ball	BallTree(leaf_size=10)	0.0983731746674	0.000793455123901	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=160'])	0.101876974106	0.00010195183754	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=700'])	0.176626205444	0.000210491895676	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=20'])	0.138066053391	8.11591148376e-05	0.9954
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=10'])	0.133329868317	7.84289836884e-05	0.9272
+annoy	Annoy(n_trees=100, search_k=40000)	1.96397209167	0.000555036067963	0.9989
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=50'])	0.0755310058594	8.22050571442e-05	0.9956
+kd	KDTree(leaf_size=200)	0.11530995369	0.00092068696022	1.0
+annoy	Annoy(n_trees=200, search_k=100000)	3.09266996384	0.00119909596443	0.9994
+annoy	Annoy(n_trees=200, search_k=1000)	3.43816709518	0.000106976985931	0.9315
+annoy	Annoy(n_trees=400, search_k=400000)	6.20598101616	0.00352928209305	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=20', 'post=0', 'efConstruction=800'], query_param=['ef=15'])	0.0541229248047	3.42500209808e-05	0.9623
+annoy	Annoy(n_trees=100, search_k=400000)	1.80312919617	0.00421480703354	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=120'])	0.130947828293	8.10480117798e-05	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=15'])	0.13414311409	6.53681755066e-05	0.9458
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=200'])	0.135082006454	0.000137721776962	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=1'])	0.131248950958	3.95951271057e-05	0.3431
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=50'])	0.131682872772	0.000113297939301	0.9999
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=1600'])	0.134057044983	0.00134252405167	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=400'])	0.134373188019	0.000155771970749	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=70'])	0.133682012558	0.00010319685936	0.9999
+annoy	Annoy(n_trees=400, search_k=400)	7.19907808304	0.000151216030121	0.8722
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=300'])	0.128185987473	0.0001438601017	1.0
+annoy	Annoy(n_trees=100, search_k=20000)	2.40141606331	0.000352266073227	0.9976
+annoy	Annoy(n_trees=100, search_k=10000)	1.96159791946	0.000262216091156	0.9944
+annoy	Annoy(n_trees=200, search_k=2000)	4.08591604233	0.00014652299881	0.9631
+bruteforce	BruteForce()	0.0442678928375	0.00779665088654	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=1400'])	0.053530216217	0.000902156114578	1.0
+annoy	Annoy(n_trees=100, search_k=1000)	2.01462292671	0.000140931844711	0.9251
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=10'])	0.132995843887	7.61330127716e-05	0.9786
+annoy	Annoy(n_trees=400, search_k=100000)	6.19206786156	0.00113743019104	0.9993
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=12', 'post=0', 'efConstruction=800'], query_param=['ef=20'])	0.0725350379944	3.7369966507e-05	0.9646
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=1000'])	0.132931947708	0.000929891109467	1.0
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=32', 'post=2', 'efConstruction=800'], query_param=['ef=70'])	0.133649110794	0.000127351999283	1.0
+annoy	Annoy(n_trees=200, search_k=400000)	3.31754207611	0.00383108496666	1.0
+annoy	Annoy(n_trees=400, search_k=20000)	5.94007396698	0.000437226057053	0.9959
+annoy	Annoy(n_trees=100, search_k=400)	1.99923205376	0.000140871047974	0.8541
+kd	KDTree(leaf_size=10)	0.14613699913	0.00144196105003	1.0
+annoy	Annoy(n_trees=400, search_k=10000)	5.44306588173	0.000306988954544	0.9924
+hnsw(nmslib)	Nmslib(method_name=hnsw, index_param=['M=48', 'post=2', 'efConstruction=800'], query_param=['ef=700'])	0.0746490955353	0.000188065052032	1.0
