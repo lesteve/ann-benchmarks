@@ -1,4 +1,4 @@
-import os
+import sys
 
 import numpy as np
 
@@ -6,16 +6,14 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-dirname = '/mnt/openstack-vm/home/ubuntu/dev/ann-benchmarks/results'
-filename = os.path.join(dirname, 'glove-all.txt')
+sns.set_style('ticks')
+
+filename = sys.argv[1]
 
 col_names = ['library', 'algo_name', 'build_time', 'best_search_time',
              'best_precision']
 df = pd.read_csv(filename, sep='\t', header=None, names=col_names)
-filename_hsnw = os.path.join(dirname, 'glove-hnsw.txt')
-df_glove = pd.read_csv(filename_hsnw, sep='\t', header=None, names=col_names)
 
-df = pd.concat([df, df_glove])
 df['best_queries_per_second'] = 1 / df['best_search_time']
 grid = sns.FacetGrid(df, hue='library', legend_out=False)
 grid.map(plt.scatter, 'best_precision', 'best_queries_per_second').set(

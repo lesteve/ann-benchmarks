@@ -347,7 +347,7 @@ class BruteForce(BaseANN):
 
     def fit(self, X):
         import sklearn.neighbors
-        metric = {'angular': 'cosine', 'euclidean': 'l2'}[self._metric]
+        metric = {'angular': 'cosine', 'euclidean': 'euclidean'}[self._metric]
         self._nbrs = sklearn.neighbors.NearestNeighbors(algorithm='brute', metric=metric)
         self._nbrs.fit(X)
 
