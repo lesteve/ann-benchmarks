@@ -1,4 +1,4 @@
-import os
+import re
 import argparse
 
 import numpy as np
@@ -43,6 +43,24 @@ query_time_ref = brute_force_blas_series.best_search_time
 df['n_queries_threshold'] = ((df.build_time - build_time_ref) /
                              (query_time_ref - df.best_search_time))
 
+# Hacky way of figuring out the size of the dataset the model was
+# fitted on
+
+match = re.search(r'\d+', args.input)
+if match is None or 'all' in args.input:
+    if 'glove' in args.input:
+        n_train = 1192514
+    elif 'sift' in args.input:
+        n_train = 999000
+    else:
+        raise ValueError(
+            'Unable to guess n_train from filename: {}'.format(args.input))
+else:
+    # assume test_size was set to 1000 (default value)
+    n_train = int(match.group()) - 1000
+
+df['n_queries_threshold_ratio'] = df['n_queries_threshold'] / n_train
+
 annoy_mask = df.library.str.contains('annoy')
 # to_plot_df = df[df.n_queries_threshold > 0 & (hnsw_mask | annoy_mask)]
 
@@ -56,16 +74,16 @@ for i, algo in enumerate(all_algos):
 
 label = 'hnsw(nmslib)'
 ax = df[hnsw_mask & (df.n_queries_threshold > 0)].plot(
-    x='best_precision', y='n_queries_threshold', kind='scatter',
+    x='best_precision', y='n_queries_threshold_ratio', kind='scatter',
     c=linestyles[label][0], marker=linestyles[label][1],
     label=label)
 
 label = 'annoy'
 df[annoy_mask & (df.n_queries_threshold > 0)].plot(
-    x='best_precision', y='n_queries_threshold', kind='scatter',
+    x='best_precision', y='n_queries_threshold_ratio', kind='scatter',
     c=linestyles[label][0], marker=linestyles[label][1],
     label=label, ax=ax)
 plt.gca().set_yscale('log')
-plt.ylim([1e3, 1e6])
+# plt.ylim([0, 1])
 plt.grid(b=True, which='major', color='0.65', linestyle='-')
 plt.savefig(args.output, bbox_inches='tight')
